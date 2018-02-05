@@ -8,7 +8,7 @@ namespace MoMAGraphQL.GraphQL
     {
         public MoMAQuery() { }
 
-        public MoMAQuery(IArtistRepository artistRepository)
+        public MoMAQuery(IArtistRepository artistData, IArtworkRepository artworkData)
         {
             Name = "Query";
 
@@ -19,8 +19,8 @@ namespace MoMAGraphQL.GraphQL
                 ),
                 resolve: context =>
                 {
-                    var id = context.GetArgument<int>("Id");
-                    var artist = artistRepository.Get(id).Result;
+                    var id = context.GetArgument<int>("id");
+                    var artist = artistData.Get(id).Result;
                     return artist;
                 }
             );
@@ -29,8 +29,30 @@ namespace MoMAGraphQL.GraphQL
                 "Artists",
                 resolve: context =>
                 {
-                    var artists = artistRepository.GetAll().Result;
+                    var artists = artistData.GetAll().Result;
                     return artists;
+                }
+            );
+
+            Field<ArtworkType>(
+                "Artwork",
+                arguments: new QueryArguments(
+                    new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "id", Description = "The id of the artwork." }
+                ),
+                resolve: context =>
+                {
+                    var id = context.GetArgument<int>("id");
+                    var artist = artworkData.Get(id).Result;
+                    return artist;
+                }
+            );
+
+            Field<ListGraphType<ArtistType>>(
+                "Artworks",
+                resolve: context =>
+                {
+                    var artworks = artworkData.GetAll().Result;
+                    return artworks;
                 }
             );
         }

@@ -1,4 +1,5 @@
 ﻿using ProtoBuf;
+using System;
 using System.Collections.Generic;
 
 namespace MoMAGraphQL.Models.Api
@@ -19,7 +20,7 @@ namespace MoMAGraphQL.Models.Api
         public string Medium { get; set; }
 
         [ProtoMember(5)]
-        public string Dimensions { get; set; }
+        public string DimensionsText { get; set; }
 
         [ProtoMember(6)]
         public string CreditLine { get; set; }
@@ -34,10 +35,10 @@ namespace MoMAGraphQL.Models.Api
         public string Department { get; set; }
 
         [ProtoMember(10)]
-        public string DateAcquired { get; set; }
+        public DateTime DateAcquired { get; set; }
 
         [ProtoMember(11)]
-        public string Cataloged { get; set; }
+        public bool Cataloged { get; set; }
 
         [ProtoMember(12)]
         public string Url { get; set; }
@@ -46,12 +47,9 @@ namespace MoMAGraphQL.Models.Api
         public string ThumbnailUrl { get; set; }
 
         [ProtoMember(14)]
-        public string Height { get; set; }
+        public Dimensions Dimensions { get; set; }
 
         [ProtoMember(15)]
-        public string Width { get; set; }
-
-        [ProtoMember(16)]
         public List<int> ArtistIds { get; set; }
     }
 }

@@ -47,10 +47,16 @@ namespace MoMAGraphQL
             services.AddSingleton<ISerializer, ProtobufSerializer>();
             services.AddSingleton<ICacheClient, StackExchangeRedisCacheClient>();
 
-            services.AddScoped<MoMAQuery>();
-            services.AddTransient<IArtistRepository, ArtistCacheRepository>();
             services.AddScoped<IDocumentExecuter, DocumentExecuter>();
+
+            services.AddScoped<MoMAQuery>();
+            services.AddTransient<IArtistRepository, ArtistCache>();
+            services.AddTransient<IArtworkRepository, ArtworkCache>();
+
             services.AddTransient<ArtistType>();
+            services.AddTransient<ArtworkType>();
+            services.AddTransient<DimensionsType>();
+            services.AddTransient<UnitLengthType>();
 
             var sp = services.BuildServiceProvider();
 
@@ -73,7 +79,10 @@ namespace MoMAGraphQL
 
             app.UseMvc();
 
-            cache.EnsureRedisSeed();
+            if (env.IsDevelopment())
+            {
+                cache.EnsureRedisSeed();
+            }
         }
     }
 }

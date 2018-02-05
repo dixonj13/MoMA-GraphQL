@@ -4,8 +4,8 @@ using StackExchange.Redis.Extensions.Core;
 
 namespace MoMAGraphQL.Data.Redis.Repositories
 {
-    public class ArtistCacheRepository : BaseCacheRepository<Artist>, IArtistRepository
+    public class ArtworkCache : BaseCache<Artwork>, IArtworkRepository
     {
-        public ArtistCacheRepository(ICacheClient cache) : base(cache, "artist") { }
+        public ArtworkCache(ICacheClient cache) : base(cache, "artwork") { }
     }
 }

@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace MoMAGraphQL.Data.Redis.Repositories
 {
-    public abstract class BaseCacheRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
+    public abstract class BaseCache<TEntity> : IBaseRepository<TEntity> where TEntity : class
     {
         protected string hashKey;
         protected ICacheClient cache;
 
-        protected BaseCacheRepository(ICacheClient cache, string hashKey)
+        protected BaseCache(ICacheClient cache, string hashKey)
         {
             this.hashKey = hashKey;
             this.cache = cache;
@@ -23,8 +23,8 @@ namespace MoMAGraphQL.Data.Redis.Repositories
 
         public async Task<ICollection<TEntity>> GetAll()
         {
-            var artists = await cache.HashGetAllAsync<TEntity>(hashKey);
-            return artists.Values;
+            var entity = await cache.HashGetAllAsync<TEntity>(hashKey);
+            return entity.Values;
         }
     }
 }
