@@ -1,6 +1,7 @@
 ﻿using MoMAGraphQL.Data.Repositories;
 using StackExchange.Redis.Extensions.Core;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace MoMAGraphQL.Data.Redis.Repositories
@@ -19,6 +20,12 @@ namespace MoMAGraphQL.Data.Redis.Repositories
         public Task<TEntity> Get(int id)
         {
             return cache.HashGetAsync<TEntity>(hashKey, id.ToString());
+        }
+
+        public async Task<ICollection<TEntity>> Get(IEnumerable<int> ids)
+        {
+            var entity = await cache.HashGetAsync<TEntity>(hashKey, ids.Select(id => id.ToString()));
+            return entity.Values;
         }
 
         public async Task<ICollection<TEntity>> GetAll()

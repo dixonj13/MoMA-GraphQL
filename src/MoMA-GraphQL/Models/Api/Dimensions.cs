@@ -16,5 +16,16 @@ namespace MoMAGraphQL.Models.Api
 
         [ProtoMember(4)]
         public float? Diameter { get; set; }
+
+        public Dimensions ConvertToInches()
+        {
+            return new Dimensions()
+            {
+                Height = (Height != null) ? Height / 2.54F : null,
+                Width = (Width != null) ? Width / 2.54F : null,
+                Depth = (Depth != null) ? Depth / 2.54F : null,
+                Diameter = (Diameter != null) ? Diameter / 2.54F : null
+            };
+        }
     }
 }

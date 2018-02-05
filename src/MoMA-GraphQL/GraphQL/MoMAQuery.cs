@@ -1,6 +1,7 @@
 ﻿using GraphQL.Types;
 using MoMAGraphQL.Data.Repositories;
 using MoMAGraphQL.GraphQL.Types;
+using System.Collections.Generic;
 
 namespace MoMAGraphQL.GraphQL
 {
@@ -12,47 +13,33 @@ namespace MoMAGraphQL.GraphQL
         {
             Name = "Query";
 
-            Field<ArtistType>(
-                "Artist",
+            Field<ListGraphType<ArtistType>>(
+                "artists",
                 arguments: new QueryArguments(
-                    new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "id", Description = "The id of the artist." }
+                    new QueryArgument<ListGraphType<IntGraphType>> { Name = "ids", Description = "The ids of the artists." }
                 ),
                 resolve: context =>
                 {
-                    var id = context.GetArgument<int>("id");
-                    var artist = artistData.Get(id).Result;
-                    return artist;
+                    var ids = context.GetArgument<List<int>>("ids");
+                    if (ids.Count > 0)
+                        return artistData.Get(ids).Result;
+                    else
+                        return artistData.GetAll().Result;
                 }
             );
 
-            Field<ListGraphType<ArtistType>>(
-                "Artists",
-                resolve: context =>
-                {
-                    var artists = artistData.GetAll().Result;
-                    return artists;
-                }
-            );
-
-            Field<ArtworkType>(
-                "Artwork",
+            Field<ListGraphType<ArtworkType>>(
+                "artwork",
                 arguments: new QueryArguments(
-                    new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "id", Description = "The id of the artwork." }
+                    new QueryArgument<ListGraphType<IntGraphType>> { Name = "ids", Description = "The ids of the works." }
                 ),
                 resolve: context =>
                 {
-                    var id = context.GetArgument<int>("id");
-                    var artist = artworkData.Get(id).Result;
-                    return artist;
-                }
-            );
-
-            Field<ListGraphType<ArtistType>>(
-                "Artworks",
-                resolve: context =>
-                {
-                    var artworks = artworkData.GetAll().Result;
-                    return artworks;
+                    var ids = context.GetArgument<List<int>>("ids");
+                    if (ids.Count > 0)
+                        return artworkData.Get(ids).Result;
+                    else
+                        return artworkData.GetAll().Result;
                 }
             );
         }

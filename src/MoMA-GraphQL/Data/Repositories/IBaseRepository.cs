@@ -7,6 +7,8 @@ namespace MoMAGraphQL.Data.Repositories
     {
         Task<TEntity> Get(int id);
 
+        Task<ICollection<TEntity>> Get(IEnumerable<int> ids);
+
         Task<ICollection<TEntity>> GetAll();
     }
 }
