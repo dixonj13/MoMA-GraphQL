@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MoMAGraphQL.Controllers
 {
-    [Route("api/graphql")]
+    [Route("graphql")]
     public class GraphQLController : Controller
     {
         private IDocumentExecuter documentExecuter;
@@ -26,7 +26,7 @@ namespace MoMAGraphQL.Controllers
 
         // POST api/graphql
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] GraphQLRoot root)
+        public async Task<IActionResult> Post([FromBody] GraphQLQuery root)
         {
             if (root == null)
             {

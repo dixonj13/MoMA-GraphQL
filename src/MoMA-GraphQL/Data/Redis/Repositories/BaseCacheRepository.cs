@@ -1,17 +1,16 @@
 ﻿using MoMAGraphQL.Data.Repositories;
 using StackExchange.Redis.Extensions.Core;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace MoMAGraphQL.Data.Redis.Repositories
 {
-    public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
+    public abstract class BaseCacheRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
     {
         protected string hashKey;
         protected ICacheClient cache;
 
-        protected BaseRepository(ICacheClient cache, string hashKey)
+        protected BaseCacheRepository(ICacheClient cache, string hashKey)
         {
             this.hashKey = hashKey;
             this.cache = cache;
