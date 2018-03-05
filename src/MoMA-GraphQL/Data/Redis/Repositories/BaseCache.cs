@@ -1,10 +1,10 @@
-﻿using MoMAGraphQL.Data.Repositories;
+﻿using GraphQLApi.Data.Repositories;
 using StackExchange.Redis.Extensions.Core;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MoMAGraphQL.Data.Redis.Repositories
+namespace GraphQLApi.Data.Redis.Repositories
 {
     public abstract class BaseCache<TEntity> : IBaseRepository<TEntity> where TEntity : class
     {

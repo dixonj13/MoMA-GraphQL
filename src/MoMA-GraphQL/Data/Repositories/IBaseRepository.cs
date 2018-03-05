@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace MoMAGraphQL.Data.Repositories
+namespace GraphQLApi.Data.Repositories
 {
     public interface IBaseRepository<TEntity> where TEntity : class
     {

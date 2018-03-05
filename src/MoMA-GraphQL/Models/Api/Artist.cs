@@ -1,7 +1,7 @@
 ﻿using ProtoBuf;
 using System.Collections.Generic;
 
-namespace MoMAGraphQL.Models.Api
+namespace GraphQLApi.Models.Api
 {
     [ProtoContract]
     public class Artist

@@ -1,9 +1,9 @@
 ﻿using GraphQL.Types;
-using MoMAGraphQL.Data.Repositories;
-using MoMAGraphQL.GraphQL.Types;
+using GraphQLApi.Data.Repositories;
+using GraphQLApi.GraphQL.Types;
 using System.Collections.Generic;
 
-namespace MoMAGraphQL.GraphQL
+namespace GraphQLApi.GraphQL
 {
     public class MoMAQuery : ObjectGraphType<object>
     {

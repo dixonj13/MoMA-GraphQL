@@ -1,6 +1,6 @@
 ﻿using ProtoBuf;
 
-namespace MoMAGraphQL.Models.Api
+namespace GraphQLApi.Models.Api
 {
     [ProtoContract]
     public class Dimensions

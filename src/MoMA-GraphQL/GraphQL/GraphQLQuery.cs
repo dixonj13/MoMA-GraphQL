@@ -1,6 +1,6 @@
 ﻿using GraphQL;
 
-namespace MoMAGraphQL.GraphQL
+namespace GraphQLApi.GraphQL
 {
     public class GraphQLQuery
     {

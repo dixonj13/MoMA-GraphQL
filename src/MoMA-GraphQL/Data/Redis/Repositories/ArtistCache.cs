@@ -1,8 +1,8 @@
-﻿using MoMAGraphQL.Data.Repositories;
-using MoMAGraphQL.Models.Api;
+﻿using GraphQLApi.Data.Repositories;
+using GraphQLApi.Models.Api;
 using StackExchange.Redis.Extensions.Core;
 
-namespace MoMAGraphQL.Data.Redis.Repositories
+namespace GraphQLApi.Data.Redis.Repositories
 {
     public class ArtistCache : BaseCache<Artist>, IArtistRepository
     {

@@ -1,7 +1,7 @@
 ﻿using GraphQL.Types;
-using MoMAGraphQL.Models.Api;
+using GraphQLApi.Models.Api;
 
-namespace MoMAGraphQL.GraphQL.Types
+namespace GraphQLApi.GraphQL.Types
 {
     public class DimensionsType : ObjectGraphType<Dimensions>
     {

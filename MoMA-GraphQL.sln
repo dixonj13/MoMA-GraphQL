@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F25BB30B-3470-43CB-A186-A078C259FAAC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoMA-GraphQL", "src\MoMA-GraphQL\MoMA-GraphQL.csproj", "{90B43214-504A-475F-8023-EA02D62432C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQLApi", "src\MoMA-GraphQL\GraphQLApi.csproj", "{90B43214-504A-475F-8023-EA02D62432C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

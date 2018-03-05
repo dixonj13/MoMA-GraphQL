@@ -1,7 +1,7 @@
 ﻿using GraphQL.Types;
 using System;
 
-namespace MoMAGraphQL.GraphQL
+namespace GraphQLApi.GraphQL
 {
     public class MoMASchema : Schema
     {

@@ -1,9 +1,9 @@
-﻿using MoMAGraphQL.Models.Api;
+﻿using GraphQLApi.Models.Api;
 using StackExchange.Redis.Extensions.Core;
 using System;
 using System.Collections.Generic;
 
-namespace MoMAGraphQL.Data.Seed
+namespace GraphQLApi.Data.Seed
 {
     public static class SeedData
     {

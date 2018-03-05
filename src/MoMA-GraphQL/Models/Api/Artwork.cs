@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MoMAGraphQL.Models.Api
+namespace GraphQLApi.Models.Api
 {
     [ProtoContract]
     public class Artwork

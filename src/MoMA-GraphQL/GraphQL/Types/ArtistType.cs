@@ -1,8 +1,8 @@
 ﻿using GraphQL.Types;
-using MoMAGraphQL.Data.Repositories;
-using MoMAGraphQL.Models.Api;
+using GraphQLApi.Data.Repositories;
+using GraphQLApi.Models.Api;
 
-namespace MoMAGraphQL.GraphQL.Types
+namespace GraphQLApi.GraphQL.Types
 {
     public class ArtistType : ObjectGraphType<Artist>
     {

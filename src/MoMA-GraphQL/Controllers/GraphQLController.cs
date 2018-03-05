@@ -1,11 +1,11 @@
 ﻿using GraphQL;
 using GraphQL.Types;
 using Microsoft.AspNetCore.Mvc;
-using MoMAGraphQL.GraphQL;
+using GraphQLApi.GraphQL;
 using System;
 using System.Threading.Tasks;
 
-namespace MoMAGraphQL.Controllers
+namespace GraphQLApi.Controllers
 {
     [Route("graphql")]
     public class GraphQLController : Controller
@@ -24,7 +24,7 @@ namespace MoMAGraphQL.Controllers
             throw new NotImplementedException();
         }
 
-        // POST api/graphql
+        // POST /graphql
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] GraphQLQuery root)
         {

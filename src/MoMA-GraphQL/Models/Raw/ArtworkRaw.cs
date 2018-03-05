@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace MoMAGraphQL.Models.Raw
+namespace GraphQLApi.Models.Raw
 {
     public class ArtworkRaw
     {

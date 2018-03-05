@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace MoMAGraphQL.Models.Raw
+namespace GraphQLApi.Models.Raw
 {
     public class ArtistRaw
     {

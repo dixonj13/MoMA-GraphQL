@@ -1,6 +1,6 @@
 ﻿using GraphQL.Types;
 
-namespace MoMAGraphQL.GraphQL.Types
+namespace GraphQLApi.GraphQL.Types
 {
     public class UnitLengthType : EnumerationGraphType
     {

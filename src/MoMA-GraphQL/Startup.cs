@@ -4,16 +4,16 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MoMAGraphQL.Data.Redis.Repositories;
-using MoMAGraphQL.Data.Repositories;
-using MoMAGraphQL.Data.Seed;
-using MoMAGraphQL.GraphQL;
-using MoMAGraphQL.GraphQL.Types;
+using GraphQLApi.Data.Redis.Repositories;
+using GraphQLApi.Data.Repositories;
+using GraphQLApi.Data.Seed;
+using GraphQLApi.GraphQL;
+using GraphQLApi.GraphQL.Types;
 using StackExchange.Redis.Extensions.Core;
 using StackExchange.Redis.Extensions.Core.Configuration;
 using StackExchange.Redis.Extensions.Protobuf;
 
-namespace MoMAGraphQL
+namespace GraphQLApi
 {
     public class Startup
     {

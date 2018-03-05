@@ -1,6 +1,6 @@
-﻿using MoMAGraphQL.Models.Api;
+﻿using GraphQLApi.Models.Api;
 
-namespace MoMAGraphQL.Data.Repositories
+namespace GraphQLApi.Data.Repositories
 {
     public interface IArtworkRepository : IBaseRepository<Artwork> { }
 }
